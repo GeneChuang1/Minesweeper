@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/row_1_col_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/row_1_col_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/row_1_col_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/row_1_col_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/row_1_col_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/row_1_col_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/row_1_col_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/row_1_col_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@mipmap/tile"
+        android:scaleType="fitXY"
+        android:onClick="mClickMethod" >
+    </ImageView>
+
+</TableRow>

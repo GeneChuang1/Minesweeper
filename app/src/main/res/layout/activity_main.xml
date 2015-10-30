@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/new_game"
+            android:layout_width="140dip"
+            android:layout_height="70dip"
+            android:layout_marginRight="45dp"
+            android:background="@drawable/new_game"
+            android:onClick="newGame" />
+
+        <ImageButton
+            android:id="@+id/check_bombs"
+            android:layout_width="140dip"
+            android:layout_height="70dip"
+            android:background="@drawable/check"
+            android:onClick="checkBombs" />
+    </LinearLayout>
+
+
+    <TableLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="300dip"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <!--
+    <RelativeLayout
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+-->
+        <include
+            android:id="@+id/row_one"
+            layout="@layout/row_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/row_two"
+            layout="@layout/row_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_one" />
+
+        <include
+            android:id="@+id/row_three"
+            layout="@layout/row_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_two" />
+
+        <include
+            android:id="@+id/row_four"
+            layout="@layout/row_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_three" />
+
+        <include
+            android:id="@+id/row_five"
+            layout="@layout/row_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_four" />
+
+        <include
+            android:id="@+id/row_six"
+            layout="@layout/row_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_five" />
+
+        <include
+            android:id="@+id/row_seven"
+            layout="@layout/row_seven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_six" />
+
+        <include
+            android:id="@+id/row_eight"
+            layout="@layout/row_eight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_seven" />
+        <!--    </RelativeLayout> -->
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/hint"
+        android:layout_width="140dip"
+        android:layout_height="70dip"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/hint"
+        android:onClick="hint" />
+
+</LinearLayout>
