@@ -2,7 +2,7 @@
 The use of this code is prohibited without written authorization by Gene Chuang.
  */
 
-package com.sample.genechuang.minesweeper;
+package com.gene.minesweeper;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
@@ -12,7 +12,15 @@ import android.test.suitebuilder.annotation.MediumTest;
 import android.view.View;
 import android.widget.ImageView;
 
-public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGame> { 
+import com.gene.minesweeper.tier_one.StartOfGame;
+import com.gene.minesweeper.tier_three.Tile;
+import com.gene.minesweeper.tier_two.Tags.Tags;
+import com.gene.minesweeper.tier_two.tier_two_point_two.CheckBombButton;
+import com.gene.minesweeper.tier_two.tier_two_point_two.HintButton;
+import com.gene.minesweeper.tier_two.tier_two_point_one.MinesweeperGame;
+import com.gene.minesweeper.tier_two.tier_two_point_two.TileClicked;
+
+public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGame> {
 	
 	private StartOfGame startOfGame;
 	TileClicked tileClickedTest;
@@ -21,7 +29,7 @@ public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGam
     private ImageView checkBombsTest;
     private int TOTAL_ROW;
     private int TOTAL_COLUMNS;
-	private TheBoard game;
+	private MinesweeperGame game;
     
     public StartOfGameTest() {
         super(StartOfGame.class);
@@ -43,8 +51,8 @@ public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGam
 
         tileClickedTest= new TileClicked(startOfGame);
         checkBombsTest = (ImageView) startOfGame.findViewById(R.id.check_bombs);
-        TOTAL_ROW= game.TOTAL_ROW;
-        TOTAL_COLUMNS= game.TOTAL_COLUMNS;
+        TOTAL_ROW= Tags.TOTAL_ROW;
+        TOTAL_COLUMNS= Tags.TOTAL_COLUMNS;
     }
     
     public void testPreconditions() {

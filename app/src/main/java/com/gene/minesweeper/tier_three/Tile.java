@@ -1,7 +1,9 @@
 /*CODE WRITTEN BY GENE CHUANG   
 The use of this code is prohibited without written authorization by Gene Chuang.
  */
-package com.sample.genechuang.minesweeper;
+package com.gene.minesweeper.tier_three;
+
+import com.gene.minesweeper.tier_two.tier_two_point_one.MinesweeperGame;
 
 public class Tile {
 	private boolean hasBomb;
@@ -30,26 +32,26 @@ public class Tile {
 	}
 	
 	public void setNumSurroundingBombs(){
-		if ((row - 1) >= 0 && (column - 1) >= 0 && (TheBoard.gameBoard[row-1][column-1].getHasBomb()==true)){
+		if ((row - 1) >= 0 && (column - 1) >= 0 && (MinesweeperGame.gameBoard[row-1][column-1].getHasBomb()==true)){
 			numSurroundingBombs++;}
-		if ((row - 1) >= 0 && TheBoard.gameBoard[row-1][column-0].getHasBomb()==true){
+		if ((row - 1) >= 0 && MinesweeperGame.gameBoard[row-1][column-0].getHasBomb()==true){
 			numSurroundingBombs++;}
 		if ((row - 1) >= 0 && (column + 1) <= 7
-				&& TheBoard.gameBoard[row-1][column+1].getHasBomb()==true){
+				&& MinesweeperGame.gameBoard[row-1][column+1].getHasBomb()==true){
 			numSurroundingBombs++;}
-		if ((column - 1) >= 0 && TheBoard.gameBoard[row-0][column-1].getHasBomb()==true){
+		if ((column - 1) >= 0 && MinesweeperGame.gameBoard[row-0][column-1].getHasBomb()==true){
 			numSurroundingBombs++;}
-		if (TheBoard.gameBoard[row-0][column-0].getHasBomb()==true){
+		if (MinesweeperGame.gameBoard[row-0][column-0].getHasBomb()==true){
 			numSurroundingBombs++;}
-		if ((column + 1) <= 7 && TheBoard.gameBoard[row-0][column+1].getHasBomb()==true){
+		if ((column + 1) <= 7 && MinesweeperGame.gameBoard[row-0][column+1].getHasBomb()==true){
 			numSurroundingBombs++;}
 		if ((row + 1) <= 7 && (column - 1) >= 0
-				&& TheBoard.gameBoard[row+1][column-1].getHasBomb()==true){
+				&& MinesweeperGame.gameBoard[row +1][column-1].getHasBomb()==true){
 			numSurroundingBombs++;}
-		if ((row + 1) <= 7 && TheBoard.gameBoard[row+1][column-0].getHasBomb()==true){
+		if ((row + 1) <= 7 && MinesweeperGame.gameBoard[row+1][column-0].getHasBomb()==true){
 			numSurroundingBombs++;}
 		if ((row + 1) <= 7 && (column + 1) <= 7
-				&& TheBoard.gameBoard[row+1][column+1].getHasBomb()==true){
+				&& MinesweeperGame.gameBoard[row +1][column+1].getHasBomb()==true){
 			numSurroundingBombs++;}
 	}
 	

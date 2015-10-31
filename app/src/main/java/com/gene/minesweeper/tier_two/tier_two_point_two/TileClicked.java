@@ -1,7 +1,7 @@
 /*CODE WRITTEN BY GENE CHUANG   
 The use of this code is prohibited without written authorization by Gene Chuang.
  */
-package com.sample.genechuang.minesweeper;
+package com.gene.minesweeper.tier_two.tier_two_point_two;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -13,10 +13,14 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.gene.minesweeper.R;
+import com.gene.minesweeper.tier_two.Tags.Tags;
+import com.gene.minesweeper.tier_two.tier_two_point_one.MinesweeperGame;
+
 public class TileClicked {
 
 	Activity activity;
-	int[][] alreadyChecked = new int[TheBoard.TOTAL_ROW][TheBoard.TOTAL_COLUMNS];
+	int[][] alreadyChecked = new int[Tags.TOTAL_ROW][Tags.TOTAL_COLUMNS];
 	String[] checkedBlanks = new String[100];
 	int counter = 0;
 	Queue<String> blanksQueue = new LinkedList<String>();
@@ -34,7 +38,7 @@ public class TileClicked {
 		int column = (Character.getNumericValue(charArray[10]));
 		ImageView mImage = (ImageView) activity.findViewById(arg0.getId());
 
-		if (TheBoard.gameBoard[row][column].getHasBomb() == true) {
+		if (MinesweeperGame.gameBoard[row][column].getHasBomb() == true) {
 			mImage.setImageResource(R.mipmap.bomb);
 
 			alert = new AlertDialog.Builder(activity);
@@ -53,10 +57,10 @@ public class TileClicked {
 			alert.show();  
 			
 		} else {
-			if (TheBoard.gameBoard[row][column]
+			if (MinesweeperGame.gameBoard[row][column]
 					.getNumSurroundingBombs() == 0) {
 				mImage.setImageResource(R.mipmap.blank);
-				TheBoard.gameBoard[row][column]
+				MinesweeperGame.gameBoard[row][column]
 						.setHasBeenRevealed(true);
 
 				initializeBlanks(alreadyChecked);
@@ -84,8 +88,8 @@ public class TileClicked {
 
 	private void initializeBlanks(int[][] arrayName) {
 		// initialize all the arrayName table elements to zero.
-		for (int row = 0; row != (TheBoard.TOTAL_ROW-1); row++) {
-			for (int column = 0; column != (TheBoard.TOTAL_COLUMNS-1); column++) {
+		for (int row = 0; row != (Tags.TOTAL_ROW-1); row++) {
+			for (int column = 0; column != (Tags.TOTAL_COLUMNS-1); column++) {
 				arrayName[row][column] = 0;
 			}
 		}
@@ -135,10 +139,10 @@ public class TileClicked {
 				.getResources().getIdentifier(tile, "id",
 						activity.getPackageName()));
 
-		if (TheBoard.gameBoard[rowCheck][columnCheck]
+		if (MinesweeperGame.gameBoard[rowCheck][columnCheck]
 				.getNumSurroundingBombs() == 0) {
 			blank.setImageResource(R.mipmap.blank);
-			TheBoard.gameBoard[actualRow][actualColumn]
+			MinesweeperGame.gameBoard[actualRow][actualColumn]
 					.setHasBeenRevealed(true);
 
 			String also_blanks = Integer.toString(rowCheck)
@@ -154,30 +158,30 @@ public class TileClicked {
 		ImageView image = (ImageView) activity.findViewById(activity.getResources()
 				.getIdentifier(tile, "id", activity.getPackageName()));
 
-		if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 0) {
+		if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 0) {
 			image.setImageResource(R.mipmap.blank);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
-		} else if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 1) {
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 1) {
 			image.setImageResource(R.mipmap.one);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
-		} else if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 2) {
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 2) {
 			image.setImageResource(R.mipmap.two);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
-		} else if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 3) {
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 3) {
 			image.setImageResource(R.mipmap.three);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
-		} else if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 4) {
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 4) {
 			image.setImageResource(R.mipmap.four);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
-		} else if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 5) {
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 5) {
 			image.setImageResource(R.mipmap.five);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
-		} else if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 6) {
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 6) {
 			image.setImageResource(R.mipmap.six);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
-		} else if (TheBoard.gameBoard[row][column].getNumSurroundingBombs() == 7) {
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 7) {
 			image.setImageResource(R.mipmap.seven);
-			TheBoard.gameBoard[row][column].setHasBeenRevealed(true);
+			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
 		}
 	}
 
