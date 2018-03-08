@@ -88,7 +88,6 @@ public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGam
     @MediumTest
     public void testClick_AllTiles() {
         System.out.println("Inside testClick_AllTiles() method");
-        
     	final View decorView = startOfGame.getWindow().getDecorView();
         ViewAsserts.assertOnScreen(decorView, checkBombsTest);
         
@@ -119,7 +118,6 @@ public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGam
     		TouchUtils.clickView(this, startOfGame.findViewById(R.id.hint));
     		pressCounter++;
     	}
-    	System.out.println("# of times the hint button was pressed= "+ pressCounter);
     	TouchUtils.clickView(this, checkBombsTest);
         mCheckBombButton= new CheckBombButton(startOfGame);
         assertEquals("win", mCheckBombButton.checkBombs((startOfGame.findViewById(R.id.check_bombs))));
@@ -138,7 +136,6 @@ public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGam
     		TouchUtils.clickView(this, startOfGame.findViewById(R.id.hint));
     		pressCounter++;
     	}
-    	System.out.println("# of times the hint button was pressed= "+ pressCounter);
     	TouchUtils.clickView(this, checkBombsTest);
         mCheckBombButton= new CheckBombButton(startOfGame);
         assertEquals("lose", mCheckBombButton.checkBombs((startOfGame.findViewById(R.id.check_bombs))));

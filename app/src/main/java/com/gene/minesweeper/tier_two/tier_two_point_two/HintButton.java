@@ -27,8 +27,9 @@ public class HintButton {
 		Random random = new Random();
 		boolean isShown = false;
 		int counter= 0;
+		int sizeOfBoard= game.getSizeOfBoard()+4; //+4 is because testHint_Win() was sometimes failing due to counter hitting sizeOfBoard in the while() loop below.
 
-		while (!isShown && counter!= game.getSizeOfBoard()) {
+		while (!isShown && counter!= sizeOfBoard) {
 			int randomRow = random.nextInt(Tags.TOTAL_ROW-1); // The range returned is from 0 to 8
 			int randomCol = random.nextInt(Tags.TOTAL_COLUMNS-1);
 
