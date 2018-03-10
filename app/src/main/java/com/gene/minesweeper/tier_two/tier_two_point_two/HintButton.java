@@ -27,7 +27,7 @@ public class HintButton {
 		Random random = new Random();
 		boolean isShown = false;
 		int counter= 0;
-		int sizeOfBoard= game.getSizeOfBoard()+4; //+4 is because testHint_Win() was sometimes failing due to counter hitting sizeOfBoard in the while() loop below.
+		int sizeOfBoard= game.getSizeOfBoard();
 
 		while (!isShown && counter!= sizeOfBoard) {
 			int randomRow = random.nextInt(Tags.TOTAL_ROW-1); // The range returned is from 0 to 8
@@ -40,6 +40,22 @@ public class HintButton {
 				isShown = true;
 			}
             counter++;
+		}
+
+		//There's only 1-2 cells that isn't being shown. Revealing the last cells randomly (above loop) is too annoying.
+		if(counter == sizeOfBoard){
+			//Manually go through each row and column
+			nonRandomForLoopCheck: for (int row= 0; row != Tags.TOTAL_ROW-1; row++){
+				for (int col=0; col!= Tags.TOTAL_COLUMNS-1; col++){
+					if (MinesweeperGame.gameBoard[row][col].getHasBomb() == true) {
+					} else if (MinesweeperGame.gameBoard[row][col].getHasBomb() == false
+							&& MinesweeperGame.gameBoard[row][col].getHasBeenRevealed() == false) {
+						reveal(row, col);
+						break nonRandomForLoopCheck;
+					}
+
+				}
+			}
 		}
 	}
 	
