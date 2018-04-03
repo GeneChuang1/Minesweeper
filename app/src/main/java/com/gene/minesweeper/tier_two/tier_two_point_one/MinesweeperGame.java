@@ -115,7 +115,7 @@ public class MinesweeperGame {
     public void tileClicked(Activity activity, View view){
         tileClickedRecursive= new TileClicked_Recursive(activity);
         tileClickedRecursive.mClickMethod(view);
-		//tileClicked = new TileClicked(activity);
-        //tileClicked.mClickMethod(view);
+//		tileClicked = new TileClicked(activity);
+//        tileClicked.mClickMethod(view);
     }
 }

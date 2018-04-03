@@ -68,18 +68,18 @@ public class TileClicked_Recursive {
 
 
     private void recursiveReveal(int row, int column) {
-        //Log.i(Tracking, "Inside recursiveReveal(row=" + row + ", col= " + column + ")");
+        Log.i(Tracking, "Inside recursiveReveal(row=" + row + ", col= " + column + ")");
 
         // Center (The tile the user clicked on)
         boolean hasNotBeenRevealed = !(MinesweeperGame.gameBoard[row][column].getHasBeenRevealed()); //The tile hasn't been revealed= !(false)= true. Thus if(true)
-        //Log.i(Tracking, "Center");
+        Log.i(Tracking, "Center");
         int revealedValue = reveal(row, column);
         if (revealedValue == 0) {  //If it's a blank tile.
             // Center Left
             int clRow = row;
             int clColumn = (column - 1);
             if (clColumn >= 0) {  //Boundary check.
-                //Log.i(Tracking, "Center Left");
+                Log.i(Tracking, "Center Left");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[clRow][clColumn].getHasBeenRevealed()); //The tile hasn't been revealed= !(false)= true. Thus if(true)
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(clRow, clColumn);
@@ -92,7 +92,7 @@ public class TileClicked_Recursive {
             int crRow = row;
             int crColumn = (column + 1);
             if (crColumn <= 7) {  //Board's Boundary Check
-                //Log.i(Tracking, "Center Right");
+                Log.i(Tracking, "Center Right");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[crRow][crColumn].getHasBeenRevealed());
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(crRow, crColumn);
@@ -105,7 +105,7 @@ public class TileClicked_Recursive {
             int tlRow = (row - 1);
             int tlColumn = (column - 1);
             if (tlRow >= 0 && tlColumn >= 0) { //Boundary Check
-                //Log.i(Tracking, "Top Left");
+                Log.i(Tracking, "Top Left");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[tlRow][tlColumn].getHasBeenRevealed());
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(tlRow, tlColumn);
@@ -118,7 +118,7 @@ public class TileClicked_Recursive {
             int tcRow = (row - 1);
             int tcColumn = column;
             if (tcRow >= 0) {
-                //Log.i(Tracking, "Top Center");
+                Log.i(Tracking, "Top Center");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[tcRow][tcColumn].getHasBeenRevealed()); //The tile hasn't been revealed= !(false)= true. Thus if(true)
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(tcRow, tcColumn);
@@ -131,7 +131,7 @@ public class TileClicked_Recursive {
             int trRow = (row - 1);
             int trColumn = (column + 1);
             if (trRow >= 0 && trColumn <= 7) {  //Boundary Check
-                //Log.i(Tracking, "Top Right");
+                Log.i(Tracking, "Top Right");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[trRow][trColumn].getHasBeenRevealed()); //The tile hasn't been revealed= !(false)= true. Thus if(true)
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(trRow, trColumn);
@@ -144,7 +144,7 @@ public class TileClicked_Recursive {
             int blRow = (row + 1);
             int blColumn = (column - 1);
             if (blRow <= 7 && blColumn >= 0) {  //Boundary Check
-                //Log.i(Tracking, "Bottom Left");
+                Log.i(Tracking, "Bottom Left");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[blRow][blColumn].getHasBeenRevealed()); //The tile hasn't been revealed= !(false)= true. Thus if(true)
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(blRow, blColumn);
@@ -157,7 +157,7 @@ public class TileClicked_Recursive {
             int bcRow = (row + 1);
             int bcColumn = column;
             if (bcRow <= 7) { //Boundary Check
-                //Log.i(Tracking, "Bottom Center");
+                Log.i(Tracking, "Bottom Center");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[bcRow][bcColumn].getHasBeenRevealed()); //The tile hasn't been revealed= !(false)= true. Thus if(true)
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(bcRow, bcColumn);
@@ -170,7 +170,7 @@ public class TileClicked_Recursive {
             int brRow = (row + 1);
             int brColumn = (column + 1);
             if (brRow <= 7 && brColumn <= 7) {  //Board's boundary check
-                //Log.i(Tracking, "Bottom Right");
+                Log.i(Tracking, "Bottom Right");
                 hasNotBeenRevealed = !(MinesweeperGame.gameBoard[brRow][brColumn].getHasBeenRevealed()); //The tile hasn't been revealed= !(false)= true. Thus if(true)
                 if (hasNotBeenRevealed) {
                     revealedValue = reveal(brRow, brColumn);
