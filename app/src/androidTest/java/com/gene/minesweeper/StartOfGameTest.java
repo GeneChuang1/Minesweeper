@@ -106,23 +106,22 @@ public class StartOfGameTest extends ActivityInstrumentationTestCase2<StartOfGam
         assertEquals("win", mCheckBombButton.checkBombs((startOfGame.findViewById(R.id.check_bombs))));
     }
 
-//TileClicked_Recursive.java broke this unit this below.
-//    @MediumTest
-//    public void testHint_Win() {
-//    	System.out.println("Inside testHint_Win() method");
-//    	HintButton hb= new HintButton(startOfGame, game);
-//    	int pressCounter=0;
-//
-//    	int totalTiles= (TOTAL_ROW-1)* (TOTAL_COLUMNS-1);
-//    	int numNonBombTiles= totalTiles - (game.numBombsInsertedCounter);
-//    	for (int i=0; i!= numNonBombTiles;i++){
-//    		TouchUtils.clickView(this, startOfGame.findViewById(R.id.hint));
-//    		pressCounter++;
-//    	}
-//    	TouchUtils.clickView(this, checkBombsTest);
-//        mCheckBombButton= new CheckBombButton(startOfGame);
-//        assertEquals("win", mCheckBombButton.checkBombs((startOfGame.findViewById(R.id.check_bombs))));
-//    }
+    @MediumTest
+    public void testHint_Win() {
+    	System.out.println("Inside testHint_Win() method");
+    	HintButton hb= new HintButton(startOfGame, game);
+    	int pressCounter=0;
+
+    	int totalTiles= (TOTAL_ROW-1)* (TOTAL_COLUMNS-1);
+    	int numNonBombTiles= totalTiles - (game.numBombsInsertedCounter);
+    	for (int i=0; i!= numNonBombTiles;i++){
+    		TouchUtils.clickView(this, startOfGame.findViewById(R.id.hint));
+    		pressCounter++;
+    	}
+    	TouchUtils.clickView(this, checkBombsTest);
+        mCheckBombButton= new CheckBombButton(startOfGame);
+        assertEquals("win", mCheckBombButton.checkBombs((startOfGame.findViewById(R.id.check_bombs))));
+    }
 
     @MediumTest
     public void testHint_LoseByXTiles() {

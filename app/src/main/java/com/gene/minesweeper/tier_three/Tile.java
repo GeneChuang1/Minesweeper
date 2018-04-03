@@ -11,6 +11,7 @@ public class Tile {
 	private int row;
 	private int column;
 	private boolean hasBeenRevealed= false;
+	private boolean wasRevealedByHintButton= false;
 	
 	public Tile (int mRow, int mColumn, boolean bomb, int SurroundingBombs) {
 		row= mRow;
@@ -58,4 +59,14 @@ public class Tile {
 	public void setHasBeenRevealed(boolean reveal){
 		hasBeenRevealed= reveal;
 	}
+
+
+	public void setWasRevealedByHintButton(boolean wasRevealedByHintButton) {
+		this.wasRevealedByHintButton = wasRevealedByHintButton;
+	}
+
+	public boolean getWasRevealedByHintButton() {
+		return wasRevealedByHintButton;
+	}
+
 }

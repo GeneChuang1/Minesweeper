@@ -68,6 +68,7 @@ public class HintButton {
 		if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 0) {
 			image.setImageResource(R.mipmap.blank);
 			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
+			MinesweeperGame.gameBoard[row][column].setWasRevealedByHintButton(true);
 		} else if (MinesweeperGame.gameBoard[row][column].getNumSurroundingBombs() == 1) {
 			image.setImageResource(R.mipmap.one);
 			MinesweeperGame.gameBoard[row][column].setHasBeenRevealed(true);
