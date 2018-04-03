@@ -3,6 +3,7 @@ The use of this code is prohibited without written authorization by Gene Chuang.
  */
 package com.gene.minesweeper.tier_two.tier_two_point_two;
 
+import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,6 +11,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -18,17 +20,19 @@ import com.gene.minesweeper.tier_two.Tags.Tags;
 import com.gene.minesweeper.tier_two.tier_two_point_one.MinesweeperGame;
 
 public class TileClicked {
+    private static final String Tracking = "Tracking";
 
-	Activity activity;
-	int[][] alreadyChecked = new int[Tags.TOTAL_ROW][Tags.TOTAL_COLUMNS];
-	String[] checkedBlanks = new String[100];
-	int counter = 0;
-	Queue<String> blanksQueue = new LinkedList<String>();
-	public AlertDialog.Builder alert;
-	
-	public TileClicked(Activity a) {
-		activity = a;
-	}
+    Activity activity;
+    int[][] alreadyChecked = new int[Tags.TOTAL_ROW][Tags.TOTAL_COLUMNS];
+    String[] checkedBlanks = new String[100];
+    int counter = 0;
+    Queue<String> blanksQueue = new LinkedList<String>();
+    public AlertDialog.Builder alert;
+    ImageView mImage;
+
+    public TileClicked(Activity a) {
+        activity = a;
+    }
 
 	public void mClickMethod(View arg0) {
 		String str = activity.getResources().getResourceEntryName(arg0.getId());
@@ -54,8 +58,8 @@ public class TileClicked {
 	           }
 	        });
 			alert.setNegativeButton("Cancel", null);
-			alert.show();  
-			
+			alert.show();
+
 		} else {
 			if (MinesweeperGame.gameBoard[row][column]
 					.getNumSurroundingBombs() == 0) {
@@ -86,14 +90,14 @@ public class TileClicked {
 		}
 	} // end of mClickMethod
 
-	private void initializeBlanks(int[][] arrayName) {
-		// initialize all the arrayName table elements to zero.
-		for (int row = 0; row != (Tags.TOTAL_ROW-1); row++) {
-			for (int column = 0; column != (Tags.TOTAL_COLUMNS-1); column++) {
-				arrayName[row][column] = 0;
-			}
-		}
-	}
+    private void initializeBlanks(int[][] arrayName) {
+        // initialize all the arrayName table elements to zero.
+        for (int row = 0; row != (Tags.TOTAL_ROW - 1); row++) {
+            for (int column = 0; column != (Tags.TOTAL_COLUMNS - 1); column++) {
+                arrayName[row][column] = 0;
+            }
+        }
+    }
 
 	private void surroundingBlanks(int actualRow, int actualColumn) {
 		// Top Left

@@ -12,8 +12,8 @@ import com.gene.minesweeper.tier_two.tier_two_point_two.CheckBombButton;
 import com.gene.minesweeper.tier_two.tier_two_point_two.HintButton;
 import com.gene.minesweeper.tier_two.tier_two_point_two.TileClicked;
 import com.gene.minesweeper.tier_two.Tags.*;
+import com.gene.minesweeper.tier_two.tier_two_point_two.TileClicked_Recursive;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class MinesweeperGame {
@@ -24,7 +24,8 @@ public class MinesweeperGame {
 	public int numBombsInsertedCounter;
 	private CheckBombButton cb;
 	private HintButton hint;
-    private TileClicked tc;
+    private TileClicked tileClicked;
+    private TileClicked_Recursive tileClickedRecursive;
 
 	public MinesweeperGame(){
 	}
@@ -112,7 +113,9 @@ public class MinesweeperGame {
     }
 
     public void tileClicked(Activity activity, View view){
-        tc= new TileClicked(activity);
-        tc.mClickMethod(view);
+        tileClickedRecursive= new TileClicked_Recursive(activity);
+        tileClickedRecursive.mClickMethod(view);
+		//tileClicked = new TileClicked(activity);
+        //tileClicked.mClickMethod(view);
     }
 }
